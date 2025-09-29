@@ -1,0 +1,30 @@
+{
+  "name": "ta_veeb_maiko",
+  "version": "1.0.0",
+  "description": "2025 Sisseastunud tarkvaraarendajate veeb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://maiko-nigul@github.com/maiko-nigul/TA_veeb.git"
+  },
+  "keywords": [
+    "õppetöö",
+    "nodejs",
+    "express",
+    "js",
+    "Tallinna",
+    "Ülikool"
+  ],
+  "author": "Maiko Nigul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maiko-nigul/TA_veeb/issues"
+  },
+  "homepage": "https://github.com/maiko-nigul/TA_veeb#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
