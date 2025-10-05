@@ -44,18 +44,38 @@ app.post("/regvisit", (req, res)=>{
         }
         else{
             //faili senisele sisule lisamine
-            fs.appendFile("public/txt/visitlog.txt", req.body.nameInput+ "; ",(err)=>{
+            fs.appendFile("public/txt/visitlog.txt", req.body.firstNameInput+ " " +req.body.lastNameInput+" "+dateEt.fullDate()+" "+dateEt.fullTime()+ ";",(err)=>{
                 if (err){
                     throw(err)
                 }
                 else{
                     console.log("Salvestatud!");
-                    res.render("regvisit");
+                    res.render("visitregistered", {fullName: req.body.firstNameInput+ " "+req.body.lastNameInput});
                 }
             })
         }
     });
 })
+app.get("/visitregistered", (req,res)=>{
+        if (err){
+            throw(err)
+        }
+        else {
+            res.render("visitregistered")
+		}
+});
 
+app.get("/visitlog", (req,res)=>{
+    let logs = [];
+    fs.readFile("public/txt/visitlog.txt", "utf-8", (err, data)=>{
+        if (err){
+            res.render("visitlog", {heading: "Lehekülje külastajad", listData: ["Ei leidnud ühtegi külastajat!"]});
+        }
+        else {
+            logs = data.split(";");
+            res.render("visitlog", {heading: "Lehekülje külastajad", listData: logs});
+		}
+    })
+});
 
 app.listen(5130);
