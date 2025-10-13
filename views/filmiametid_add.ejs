@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="et">
+	<head>
+		<meta charset="UTF-8">
+		<title>Maiko Nigul, veebiprogrammeerine</title>
+	</head>
+<body>
+	<img src="../../images/vp_banner_2025_TA.jpg" alt="kursuse bänner">
+	<h1>Maiko Nigul, veebiprogrammeerine</h1>
+	<p>See leht on loodud veebiprogrammeerise kursusel <a href="https://www.tlu.ee/">Tallinna Ülikool</a> ning ei sisalda tõsiseltvõetavat sisu!</p>
+	<hr>
+	<ul>
+		<li><a href = "/">Avaleht</a></li>
+		<li><a href = "/Eestifilm">Eesti filmi avaleht</a></li>
+	</ul>
+	<hr>
+	<h2>Filmi ametite lisamine</h2>
+	<form method="POST">
+		<label for= "positionInput"> Filmiameti nimetus</label>
+		<input id = "positionInput" name="positionInput" type="text" required placeholder ="Amet...">
+		<textarea id="positionDescriptionInput" name="positionDescriptionInput" cols="100" rows="5" placeholder="Ameti lühikirjeldus..."></textarea>
+		<br>
+		<input id="positionSubmit" name="positionSubmit" type="submit" value="Salvesta">
+	</form>
+	<p>Staatus: <%= notice %></p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="et">
+	<head>
+		<meta charset="UTF-8">
+		<title>Maiko Nigul, veebiprogrammeerine</title>
+	</head>
+<body>
+	<img src="../images/vp_banner_2025_TA.jpg" alt="kursuse bänner">
+	<h1>Maiko Nigul, veebiprogrammeerine</h1>
+	<p>See leht on loodud veebiprogrammeerise kursusel <a href="https://www.tlu.ee/">Tallinna Ülikool</a> ning ei sisalda tõsiseltvõetavat sisu!</p>
+	<hr>
+	<ul>
+		<li><a href = "/">Avaleht</a></li>
+		<li><a href = "/Eestifilm">Eesti filmi avaleht</a></li>
+	</ul>
+	<hr>
+	<h2>Eesti film inimesed</h2>
+	<form method="POST">
+		<label for= "firstNameInput"> Filmiinimese eesnimi</label>
+		<input id = "firstNameInput" name="firstNameInput" type="text" required placeholder ="Eesnimi...">
+		<br>
+		<label for= "lastNameInput"> Filmiinimese perekonnanimi</label>
+		<input id = "lastNameInput" name="lastNameInput" type="text" required placeholder ="Perekonnanimi...">
+		<br>
+		<label for= "bornInput"> Filmiinimese sünnikuupäev</label>
+		<input id = "bornInput" name="bornInput" type="date" required placeholder ="Sünnikuupäev...">
+		<br>
+		<label for= "deceasedInput"> Filmiinimese surmakuupäev</label>
+		<input id = "deceasedInput" name="deceasedInput" type="date" placeholder ="Surmakuupäev...">
+		<br>
+		<input id="personSubmit" name="personSubmit" type="submit" value="Salvesta">
+	</form>
+	<p>Staatus: <%= notice %></p>
+</body>
+</html>
