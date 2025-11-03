@@ -9,7 +9,7 @@ const textRef = "public/txt/vanasonad.txt";
 const app = express(); // käivitan express.js funktisooni ja annan talle nimeks "app"
 app.set("view engine", "ejs"); //määran veebilehtede mallie renderamidse mootori
 app.use(express.static("public")); //määran ühe päris kataloogi avalikult kättesaadavaks
-app.use(bodyparser.urlencoded({extended:false}))//parsime päringu URLi, lipp false, kui ainult tekst ja true, kui muid andmeid ka
+app.use(bodyparser.urlencoded({extended:true}))//parsime päringu URLi, lipp false, kui ainult tekst ja true, kui muid andmeid ka
 
 app.get("/", (req, res)=>{
     //res.send("Express.js läks käima ja serveerib veebi");
@@ -86,6 +86,10 @@ app.get("/visitlog", (req,res)=>{
 //Eesti filmi marsruudid
 const eestifilmRouter = require("./routes/eestifilmRoutes");
 app.use("/eestifilm",eestifilmRouter);
+
+//Galerii fotode üleslaadimine
+const photoupRouter=require("./routes/galleryRoutes");
+app.use("/galleryphotoupload", photoupRouter);
 
 
 app.listen(5130);

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="et">
+	<head>
+		<meta charset="UTF-8">
+		<title>Maiko Nigul, veebiprogrammeerine</title>
+	</head>
+<body>
+	<img src="../images/vp_banner_2025_TA.jpg" alt="kursuse bänner">
+	<h1>Maiko Nigul, veebiprogrammeerine</h1>
+	<p>See leht on loodud veebiprogrammeerise kursusel <a href="https://www.tlu.ee/">Tallinna Ülikool</a> ning ei sisalda tõsiseltvõetavat sisu!</p>
+	<hr>
+	<ul>
+		<li><a href = "/">Avaleht</a></li>
+		<li><a href = "/Eestifilm">Eesti filmi avaleht</a></li>
+		<li><a href = "/Eestifilm/filmid">Filmide list</a></li>
+	</ul>
+	<hr>
+	<h2>Filmide lisamine</h2>
+	<form method="POST">
+		<label for= "movieInput">Filmi pealkiri</label>
+		<input id = "movieInput" name="movieInput" type="text" required placeholder ="Filmipealkiri...">
+		<br>
+		<label for= "movieProductionYear">Filmi tootmisaasta</label>
+		<input id = "movieProductionYear" name="movieProductionYear" type="number" required placeholder ="Filmi tootmisaasta...">
+		<br>
+		<label for= "movieDuration">Filmi kestus</label>
+		<input id = "movieDuration" name="movieDuration" type="number" required placeholder ="Filmi kestus...">
+		<br>
+		<label for= "movieDescription">Filmi lühikirjeldus</label>
+		<input id = "movieDescription" name="movieDescription" type="text" required placeholder ="Filmi lühikirjeldus...">
+		<br>
+		<input id="movieSubmit" name="movieSubmit" type="submit" value="Salvesta">
+	</form>
+	<p>Staatus: <%= notice %></p>
+	
+</body>
+</html>
