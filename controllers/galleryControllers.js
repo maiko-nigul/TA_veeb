@@ -49,8 +49,38 @@ const photouploadPage_post = async(req,res)=>{
         }
     }
 }
+const gallery = async(req,res)=>{
+    let conn;
+    try{
+       conn = await mysql.createConnection(dbConf);
+		let sqlReq = "SELECT file_name, alt_text FROM gallery_photos WHERE privacy >= ? AND deleted IS NULL";
+		const privacy = 2;
+		const [rows, fields] = await conn.execute(sqlReq, [privacy]);
+		console.log(rows);
+		let galleryData = [];
+		for (let i = 0; i < rows.length; i ++){
+			let alt_text = "Galeriipilt";
+			if(rows[i].alt_text != ""){
+				alt_text = rows[i].alt_text;
+			}
+			galleryData.push({src: rows[i].file_name, alt: alt_text});
+		}
+		res.render("gallery", {galleryData: galleryData, imagehref: "../gallery/thumbs/", normalimagehref:"../gallery/normal/"});
+    }
+    catch (err){
+        console.log(err)
+        res.render("gallery",{galleryData: []});
+    }
+    finally{
+        if(conn){
+            await conn.end();
+            console.log("Andmebaasi ühendus on suletud")
+        }
+    }
+}
 
 module.exports={
     photouploadPage,
-    photouploadPage_post
+    photouploadPage_post,
+    gallery
 };

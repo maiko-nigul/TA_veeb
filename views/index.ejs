@@ -16,7 +16,10 @@
 		<li><a href = "/visitlog">Logiraamat</a></li>
 		<li><a href = "/Eestifilm">Eesti film</a></li>
 		<li><a href = "/galleryphotoupload">Galeriise fotode ülesse laadimine</a></li>
-		
+		<li><a href = "/galleryphotoupload/gallery">Fotogalerii</a></li>
 	</ul>
+	<ol><% photos.forEach(function(listItem){ %>
+		<img src="/gallery/normal/<%= listItem.file_name%>" alt="<%= listItem.alt_text%>"><% }); %>
+	</ol>
 </body>
 </html>

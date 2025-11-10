@@ -11,10 +11,6 @@ app.set("view engine", "ejs"); //määran veebilehtede mallie renderamidse mooto
 app.use(express.static("public")); //määran ühe päris kataloogi avalikult kättesaadavaks
 app.use(bodyparser.urlencoded({extended:true}))//parsime päringu URLi, lipp false, kui ainult tekst ja true, kui muid andmeid ka
 
-app.get("/", (req, res)=>{
-    //res.send("Express.js läks käima ja serveerib veebi");
-    res.render("index");
-});
 
 app.get("/timenow", (req,res)=>{
     const weekDayNow = dateEt.weekDay();
@@ -90,6 +86,10 @@ app.use("/eestifilm",eestifilmRouter);
 //Galerii fotode üleslaadimine
 const photoupRouter=require("./routes/galleryRoutes");
 app.use("/galleryphotoupload", photoupRouter);
+
+//indexi lehe kuvamine
+const indexRouter=require("./routes/indexRoutes");
+app.use("/", indexRouter);
 
 
 app.listen(5130);
